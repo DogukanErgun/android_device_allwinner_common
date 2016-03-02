@@ -1,3 +1,5 @@
+ifeq (1,0)
+
 LOCAL_PATH:= $(call my-dir)
 
 common_src_files := \
@@ -36,6 +38,7 @@ common_static_libraries :=
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libsayeye
+LOCAL_MODULE_TAGS := optional
 
 ifeq ($(TARGET_BOARD_PLATFORM), kylin)
 LOCAL_CFLAGS   += -DSUN9IW1P1
@@ -66,6 +69,7 @@ include $(BUILD_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE:= sayeye
+LOCAL_MODULE_TAGS := optional
 
 ifeq ($(TARGET_BOARD_PLATFORM), kylin)
 LOCAL_CFLAGS   += -DSUN9IW1P1
@@ -105,3 +109,4 @@ LOCAL_C_INCLUDES :=
 LOCAL_SHARED_LIBRARIES := libcutils
 
 include $(BUILD_EXECUTABLE)
+endif
